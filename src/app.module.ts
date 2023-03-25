@@ -5,7 +5,7 @@ import { User } from "./users/users.model";
 import { UsersModule } from './users/users.module';
 import { CarsModule } from './cars/cars.module';
 import { Car } from "./cars/cars.model";
-import { UserCars } from "./users/user-cars.model";
+import { UserCars } from "./user_car/user-cars.model";
 
 
 @Module({

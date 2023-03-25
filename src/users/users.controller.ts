@@ -1,4 +1,4 @@
-import { Controller,  Post, Body, Get } from '@nestjs/common';
+import { Controller,  Post, Body, Get, Param } from '@nestjs/common';
 import { ApiOperation } from '@nestjs/swagger';
 import { ApiResponse } from '@nestjs/swagger/dist';
 import { ApiTags } from '@nestjs/swagger/dist/decorators';
@@ -12,19 +12,32 @@ export class UsersController {
 
   constructor (private usersService: UsersService) {}
 
-  @ApiOperation({summary: 'Создание пользователя'})
+  @ApiOperation({summary: 'Создать пользователя'})
   @ApiResponse({status: 200, type: User})
   @Post()
   create(@Body() userDto: CreateUserDto) {
     return this.usersService.createUser(userDto);
   }
-
   
-  @ApiOperation({summary: 'Получение всех пользователей'})
+  @ApiOperation({summary: 'Получить всех пользователей'})
   @ApiResponse({status: 200, type: [User]})
   @Get()
   getAll() {
     return this.usersService.getAllUsers();
   }
-  
+
+  @ApiOperation({summary: 'Получить пользователей с авто'})
+  @ApiResponse({status: 200, type: [User]})
+  @Get('users-cars')
+  getUsersCars() {
+    return this.usersService.getAllUsersCars();
+  }
+
+  @ApiOperation({summary: 'Получить пользователей без авто'})
+  @ApiResponse({status: 200, type: [User]})
+  @Get('users-no-cars')
+  getUsersNoCars() {
+    return this.usersService.getAllUsersNoCars();
+  }
+
 }

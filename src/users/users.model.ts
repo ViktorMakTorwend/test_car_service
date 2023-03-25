@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger/dist";
 import { Model, Table, Column, DataType, BelongsToMany } from "sequelize-typescript";
 import { Car } from "src/cars/cars.model";
-import { UserCars } from "./user-cars.model";
+import { UserCars } from "../user_car/user-cars.model";
 
 
 interface UserCreationAttr {

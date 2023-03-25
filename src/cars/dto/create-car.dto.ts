@@ -7,4 +7,6 @@ export class CreateCarDto {
   readonly model: string;
   @ApiProperty({example: '2020', description: 'Год выпуска авто'})
   readonly prod_year: string;
+  @ApiProperty({example: 'AA100A', description: 'Номер машины'})
+  readonly car_number: string;
 }

@@ -12,12 +12,12 @@ export class UserCars extends Model<UserCars> {
   id: number;
 
   @ApiProperty({example: '1', description: 'ID пользователя'})
-  @ForeignKey( () => Car)
+  @ForeignKey( () => User)
   @Column({ type: DataType.INTEGER})
   userId: number;
 
   @ApiProperty({example: '1', description: 'ID машины'})
-  @ForeignKey( () => User)
+  @ForeignKey( () => Car)
   @Column({ type: DataType.INTEGER})
   carId: number;
 
