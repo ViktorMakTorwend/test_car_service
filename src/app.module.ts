@@ -5,7 +5,7 @@ import { User } from "./users/users.model";
 import { UsersModule } from './users/users.module';
 import { CarsModule } from './cars/cars.module';
 import { Car } from "./cars/cars.model";
-import { Carrier } from "./carrier/carrier.model";
+import { UserCars } from "./users/user-cars.model";
 
 
 @Module({
@@ -20,7 +20,7 @@ import { Carrier } from "./carrier/carrier.model";
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Car, Carrier],
+      models: [User, Car, UserCars],
       autoLoadModels: true
     }),
     UsersModule,

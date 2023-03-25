@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger/dist";
 import { Model, Table, Column, DataType, BelongsToMany } from "sequelize-typescript";
-import { Carrier } from "src/carrier/carrier.model";
+import { UserCars } from "src/users/user-cars.model";
 import { User } from "src/users/users.model";
 
 
@@ -29,7 +29,7 @@ export class Car extends Model<Car, CarCreationAttr> {
   @Column({ type: DataType.STRING, allowNull: false })
   prod_year: string;
 
-  @BelongsToMany( () => User, () => Carrier )
+  @BelongsToMany( () => User, () => UserCars )
   users: User[];
 
 }

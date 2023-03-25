@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger/dist";
 import { Model, Table, Column, DataType, BelongsToMany } from "sequelize-typescript";
-import { Carrier } from "src/carrier/carrier.model";
 import { Car } from "src/cars/cars.model";
+import { UserCars } from "./user-cars.model";
 
 
 interface UserCreationAttr {
@@ -34,7 +34,7 @@ export class User extends Model<User, UserCreationAttr> {
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
-  @BelongsToMany( () => Car, () => Carrier )
+  @BelongsToMany( () => Car, () => UserCars )
   cars: Car[];
 
 }
